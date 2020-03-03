@@ -1,0 +1,72 @@
+@font-face {
+    font-family: Gotham-regular;
+    src: url(/font/GothaProReg.otf);
+}
+  
+@font-face {
+    font-family: Gotham-medium;
+    src: url(/font/GothaProMed.otf);
+}
+  
+@font-face {
+    font-family: Gotham-light;
+    src: url(/font/GothaProLig.otf);
+}
+  
+@font-face {
+    font-family: Gotham-bold;
+    src: url(/font/GothaProBol.otf);
+}
+
+body {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: left;
+}
+
+.row {
+    display: flex;
+    flex-direction: row;
+
+}
+.from {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+}
+
+.to {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+}
+
+
+.convert {
+    display: flex;
+    align-self: flex-end;
+}
+
+.change {
+    display: flex;
+    align-self: flex-end;
+    width: 20px;
+}
+
+
+.icon-2 {
+    display: flex;
+    justify-content: center;
+    border: none;
+    border-radius: 20%;
+
+}
+
+.result {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-top: 5%;
+}

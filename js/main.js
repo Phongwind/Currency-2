@@ -1,18 +1,24 @@
 
-const exchangeRate = 23208;
 let amountInput = document.getElementById('amount');
 let convertButton = document.getElementById('convertButton');
 let resultArea = document.getElementById('resultArea');
-let from = document.getElementById('from')
-let to = document.getElementById('to')
+let from = document.getElementById('from');
+let to = document.getElementById('to');
+let reverseButton = document.getElementById('reverseButton');
 
 convertButton.addEventListener("click", vndToUsd);
-// convertButton.addEventListener("click", usaToVnd);
+reverseButton.addEventListener("click", usaToVnd);
+reverseButton.addEventListener("click", reverse);
 
 function formatCurrency(type, value) {
    return new Intl.NumberFormat('en-US', { style: 'currency', currency: type }).format(value)
 }
 
+function getFromTo() {
+    const from = document.getElementById("from").value;
+    const to = document.getElementById("to").value;
+    return [from, to];
+  }
 // function getFromto() {
 //     form = form.value;
 //     to = to.value;
@@ -67,6 +73,22 @@ function vndToUsd() {
     // console.log ("This is input that user type ", currencyRatio[from.toLowerCase()][to.toLowerCase()]);
     resultArea.innerHTML = `This is the result ${formatCurrency(toCurrency,convertedAmount)}`;
 }
+
+function usaToVnd() {
+    let fromCurrency = from.value;
+    let toCurrency = to.value;
+    amout = amountInput.value;
+    let currency = currencyRatio[toCurrency.toLowerCase()][fromCurrency.toLowerCase()];
+    const convertedAmount = (amount * currency).toFixed(2);
+    resultArea.innerHTML = `This is the result ${formatCurrency(fromCurrency,convertedAmount)}`;
+}
+
+function reverse() {
+    const [from, to] = getFromTo();
+  
+    document.getElementById("from").value = to;
+    document.getElementById("to").value = from;
+  }
 
 // function usdToVnd() {
 //     from = from.value;

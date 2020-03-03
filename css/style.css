@@ -63,6 +63,15 @@ body {
 
 }
 
+.icon-1 {
+    display: flex;
+    justify-content: center;
+    border: none;
+    border-radius: 20%;
+    background-color: white;
+
+}
+
 .result {
     display: flex;
     flex-direction: column;
